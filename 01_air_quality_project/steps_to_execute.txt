@@ -1,0 +1,71 @@
+STEP 1: Basic Folder & VS Code Setup
+🧾 Create a project folder:
+
+Go to your desktop.
+
+Create a folder manually and name it:
+
+air_quality_project
+
+📂 Open VS Code
+
+Open VS Code.
+
+Click File > Open Folder...
+
+Select the folder air_quality_project
+
+In VS Code, on the left, create two files:
+
+etl.py → Python code for data loading
+
+requirements.txt → libraries to install
+
+Now your folder structure will look like:
+
+air_quality_project/
+    etl.py
+    requirements.txt
+
+STEP 2: Python Environment Setup
+
+➡️ Open the VS Code terminal:
+
+View > Terminal (or press Ctrl + `)
+
+Create a virtual environment (optional but good practice)
+python -m venv venv
+
+
+Activate it:
+
+On Windows:
+
+venv\Scripts\activate
+
+
+
+STEP 3: Snowflake Setup (Step-by-Step)
+
+Login to the Snowflake Web UI:
+
+URL usually looks like:
+
+https://abcdxy123.us-east-1.snowflakecomputing.com
+
+Create database, schema, table:
+-- Create a database
+CREATE DATABASE DEMO_DB;
+
+-- Switch to that DB
+USE DATABASE DEMO_DB;
+
+-- Create a schema
+CREATE SCHEMA PUBLIC;
+
+-- Create a table
+CREATE OR REPLACE TABLE AIR_QUALITY (
+    CITY STRING,
+    AQI INTEGER,
+    TIMESTAMP TIMESTAMP
+);
